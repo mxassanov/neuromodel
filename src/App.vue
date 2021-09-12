@@ -2,10 +2,13 @@
   <div id="app" class="bg-gray-700">
     <div class="navigation bg-gray-700">
       <ul class="flex border-b">
-        <li class="-mb-px mr-1">
+        <li
+            @click.prevent="showAllDatasets"
+            class="-mb-px mr-1"
+        >
           <router-link
               to="/" exact
-              class="bg-gray-700 inline-block py-2 px-4 text-gray-200 hover:text-white font-semibold"
+              class="bg-gray-700 inline-block py-2 px-4 text-gray-300 hover:text-white font-semibold font-mono"
               active-class="border-l border-t border-r rounded-t bg-gray-200">
             Datasets
           </router-link>
@@ -13,7 +16,7 @@
         <li class="mr-1">
           <router-link
               to="/add"
-              class="bg-gray-700 inline-block py-2 px-4 text-gray-200 hover:text-white font-semibold"
+              class="bg-gray-700 inline-block py-2 px-4 text-gray-300 hover:text-white font-semibold font-mono"
               active-class="border-l border-t border-r rounded-t -mb-px bg-gray-200">
             Add
           </router-link>
@@ -28,8 +31,16 @@
 </template>
 
 <script>
+import {mapMutations} from "vuex";
+
 export default {
   name: 'App',
+  methods: {
+    ...mapMutations(['SET_TAG_FOR_FILTER']),
+    showAllDatasets() {
+      this.SET_TAG_FOR_FILTER(null);
+    }
+  }
 }
 </script>
 

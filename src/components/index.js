@@ -1,6 +1,8 @@
 import DatasetsList from "./DatasetsList";
 import TagComponent from "./TagComponent";
+import Modal from "./Modal";
+import CardComponent from "./CardComponent";
 
 export default [
-    DatasetsList, TagComponent
+    DatasetsList, TagComponent, Modal, CardComponent
 ]

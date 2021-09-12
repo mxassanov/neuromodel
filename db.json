@@ -1,6 +1,7 @@
 {
   "datasets": [
     {
+      "id": 1,
       "title": "mnist",
       "tags": [
         "images",
@@ -10,15 +11,7 @@
       "size": null
     },
     {
-      "title": "fashion-mnist",
-      "tags": [
-        "images",
-        "classification",
-        "tensorflow.keras"
-      ],
-      "size": null
-    },
-    {
+      "id": 3,
       "title": "cifar10",
       "tags": [
         "images",
@@ -28,6 +21,7 @@
       "size": null
     },
     {
+      "id": 4,
       "title": "cifar100",
       "tags": [
         "images",
@@ -37,6 +31,7 @@
       "size": null
     },
     {
+      "id": 5,
       "title": "imdb",
       "tags": [
         "text",
@@ -47,6 +42,7 @@
       "size": null
     },
     {
+      "id": 6,
       "title": "boston_housing",
       "tags": [
         "text",
@@ -57,6 +53,7 @@
       "size": null
     },
     {
+      "id": 7,
       "title": "reuters",
       "tags": [
         "text",
@@ -67,6 +64,7 @@
       "size": null
     },
     {
+      "id": 8,
       "title": "sber",
       "tags": [
         "timeseries",
@@ -76,6 +74,7 @@
       "size": 80
     },
     {
+      "id": 9,
       "title": "автомобили",
       "tags": [
         "images",
@@ -85,6 +84,7 @@
       "size": null
     },
     {
+      "id": 10,
       "title": "автомобили_3",
       "tags": [
         "images",
@@ -94,6 +94,7 @@
       "size": null
     },
     {
+      "id": 11,
       "title": "самолеты",
       "tags": [
         "images",
@@ -104,6 +105,7 @@
       "size": null
     },
     {
+      "id": 12,
       "title": "губы",
       "tags": [
         "images",
@@ -113,6 +115,7 @@
       "size": null
     },
     {
+      "id": 13,
       "title": "заболевания",
       "tags": [
         "text",
@@ -123,6 +126,7 @@
       "size": null
     },
     {
+      "id": 14,
       "title": "договоры",
       "tags": [
         "text",
@@ -133,6 +137,7 @@
       "size": null
     },
     {
+      "id": 15,
       "title": "умный_дом",
       "tags": [
         "audio",
@@ -144,6 +149,7 @@
       "size": null
     },
     {
+      "id": 16,
       "title": "трейдинг",
       "tags": [
         "traiding",
@@ -153,6 +159,7 @@
       "size": null
     },
     {
+      "id": 17,
       "title": "квартиры",
       "tags": [
         "text",
@@ -161,6 +168,15 @@
         "Terra AI"
       ],
       "size": 1
+    },
+    {
+      "title": "test",
+      "tags": [
+        "test",
+        " test2"
+      ],
+      "size": null,
+      "id": 22
     }
   ]
 }
