@@ -170,13 +170,16 @@
       "size": 1
     },
     {
-      "title": "test",
-      "tags": [
-        "test",
-        " test2"
-      ],
+      "title": "",
+      "tags": [],
       "size": null,
-      "id": 22
+      "id": 20
+    },
+    {
+      "title": "",
+      "tags": [],
+      "size": null,
+      "id": 21
     }
   ]
 }

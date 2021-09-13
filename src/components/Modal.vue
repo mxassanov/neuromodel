@@ -70,10 +70,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['DATASETS']),
+    ...mapGetters('dataset', ['DATASETS']),
   },
   methods: {
-    ...mapActions(['ADD_DATASET', 'EDIT_DATASET']),
+    ...mapActions('dataset', ['ADD_DATASET', 'EDIT_DATASET']),
     saveDataset() {
       if (this.isAddMode) {
         this.lastDatasetId = this.DATASETS[this.DATASETS.length - 1].id;

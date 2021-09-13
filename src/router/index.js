@@ -15,9 +15,9 @@ export default new Router({
       component: DatasetsList
     },
     {
-      path: "/add",
-      name: "add",
-      component: () => import("../components/AddDataset.vue")
+      path: "/networks",
+      name: "networks",
+      component: () => import("../components/Networks.vue")
     }
   ]
 })

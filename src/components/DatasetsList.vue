@@ -35,12 +35,9 @@
           <i class="fas fa-bars mr-1"></i>
           Выберите датасет
         </div>
-        <button
-            @click="isAddMode = true"
-            class="bg-gray-600 hover:text-white hover:bg-gray-500 text-gray-200 font-bold px-3 border border-gray-300 rounded mr-6"
-        >
+        <button-component @buttonComponentClick="isAddMode = true">
           Добавить датасет
-        </button>
+        </button-component>
       </div>
       <div class="flex justify-start flex-wrap m-2">
         <card-component
@@ -71,7 +68,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['DATASETS', 'TAG_FOR_FILTER']),
+    ...mapGetters('dataset', ['DATASETS', 'TAG_FOR_FILTER']),
     uniqueTags() {
       let tagArr = [];
       this.DATASETS.forEach(dataset => {
@@ -89,8 +86,8 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['GET_DATASETS', 'REMOVE_DATASET']),
-    ...mapMutations(['SET_TAG_FOR_FILTER']),
+    ...mapActions('dataset', ['GET_DATASETS', 'REMOVE_DATASET']),
+    ...mapMutations('dataset', ['SET_TAG_FOR_FILTER']),
     closeModal() {
       this.isAddMode = false;
       this.isEditMode = false;
