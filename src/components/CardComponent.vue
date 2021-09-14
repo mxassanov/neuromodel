@@ -7,11 +7,13 @@
           <i
               @click="$emit('editItem')"
               class="fas fa-pen mx-3 text-gray-400 hover:text-white cursor-pointer transform hover:scale-150"
-              title="Редактировать"></i>
+              title="Редактировать">
+          </i>
           <i
               @click="$emit('removeItem')"
               class="fas fa-times -mt-2 -mr-3 text-gray-400 hover:text-white cursor-pointer transform hover:scale-150"
-              title="Удалить"></i>
+              title="Удалить">
+          </i>
         </div>
       </div>
       <hr class="bg-gray-500 h-0.5 border-none shadow-2xl">

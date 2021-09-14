@@ -6,7 +6,7 @@ import store from './store'
 import components from './components';
 import './assets/css/tailwind.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'
-import {DraggableDirective } from '@braks/revue-draggable';
+import {DraggableDirective} from '@braks/revue-draggable';
 
 Vue.config.productionTip = false
 Vue.directive('draggable', DraggableDirective)
