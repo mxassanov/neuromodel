@@ -86,7 +86,7 @@ export default {
     ...mapActions('dataset', ['ADD_DATASET', 'EDIT_DATASET']),
     saveDataset() {
       if (this.isAddMode) {
-        this.lastDatasetId = this.DATASETS[this.DATASETS.length - 1].id;
+        this.lastDatasetId = this.DATASETS.length ? this.DATASETS[this.DATASETS.length - 1].id : 1;
         this.$set(this.newDataset, 'id', this.lastDatasetId + 1);
         this.ADD_DATASET(this.newDataset);
       }

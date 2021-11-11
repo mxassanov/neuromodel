@@ -1,5 +1,5 @@
 <template>
-  <div id="root">
+  <div id="root" :class="heightPage">
     <pre-loader v-if="IS_LOADING" />
     <my-modal
         v-if="isAddMode || isEditMode"
@@ -8,15 +8,14 @@
         :isAddMode="isAddMode"
         :isEditMode="isEditMode"
     />
-    <div id="tags">
+    <div id="tags" v-if="uniqueTags.length">
       <div
-          v-if="uniqueTags.length"
           class="text-gray-200 font-bold flex justify-start m-4 font-mono"
       >
         <i class="fas fa-tags mr-2"></i>
         Выберите тег:
       </div>
-      <div class="flex justify-start flex-wrap m-2">
+      <div class="flex justify-start flex-wrap m-2 h-full">
         <tag-component
             v-for="(tag, i) in uniqueTags"
             :key="i"
@@ -30,7 +29,6 @@
     <div id="cards" class="pb-8">
       <div class="flex justify-between">
         <div
-            v-if="DATASETS.length"
             class="text-gray-200 font-bold justify-start m-4 font-mono"
         >
           <i class="fas fa-bars mr-1"></i>
@@ -76,6 +74,9 @@ export default {
         tagArr = tagArr.concat(dataset.tags);
       });
       return [...new Set(tagArr)];
+    },
+    heightPage() {
+      return this.DATASETS.length === 0 ? 'h-screen' : 'h-full';
     },
     datasetsValue() {
       return this.TAG_FOR_FILTER ? this.filterDatasetsByTags : this.DATASETS;

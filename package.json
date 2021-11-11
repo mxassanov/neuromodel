@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "concurrently \"vue-cli-service serve\" \"json-server --watch db.json --port 3001\"",
+    "create-db": "node db/index.js",
+    "start": "concurrently \"vue-cli-service serve\" \"json-server --watch db/db.json --port 3001\"",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -35,6 +36,7 @@
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-vue": "^8.0.3",
+    "faker": "^5.5.3",
     "laravel-mix": "^5.0.1",
     "postcss": "^7.0.36",
     "vue-template-compiler": "^2.6.11"
