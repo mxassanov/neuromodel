@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "create-db": "node db/index.js",
-    "start": "concurrently \"vue-cli-service serve\" \"json-server --watch db/db.json --port 3001\"",
+    "create-db": "node src/db/index.js",
+    "start": "concurrently \\\"vue-cli-service serve\\\" \\\"json-server --watch src/db/db.json --port 3001\\\"",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -56,6 +56,7 @@
     },
     "rules": {}
   },
+  "proxy": "http://localhost:3001",
   "browserslist": [
     "> 1%",
     "last 2 versions",

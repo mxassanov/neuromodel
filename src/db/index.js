@@ -28,7 +28,7 @@ const data = {
 };
 
 // eslint-disable-next-line consistent-return
-fs.writeFile('db/db.json', JSON.stringify(data, null, 2), (err) => {
+fs.writeFile('src/db/db.json', JSON.stringify(data, null, 2), (err) => {
   if (err) return console.log(err);
-  console.log('Created database at db/db.json');
+  console.log('Created database at src/db/db.json');
 });
