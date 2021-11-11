@@ -8,7 +8,8 @@
         >
           <router-link
               to="/" exact
-              class="bg-gray-700 inline-block py-2 px-4 text-gray-300 hover:text-white font-semibold font-mono"
+              class="bg-gray-700 inline-block py-2 px-4 text-gray-300 hover:text-white
+               font-semibold font-mono"
               active-class="border-l border-t border-r rounded-t bg-gray-200">
             Датасеты
           </router-link>
@@ -16,7 +17,8 @@
         <li class="mr-1">
           <router-link
               to="/networks"
-              class="bg-gray-700 inline-block py-2 px-4 text-gray-300 hover:text-white font-semibold font-mono"
+              class="bg-gray-700 inline-block py-2 px-4 text-gray-300 hover:text-white
+               font-semibold font-mono"
               active-class="border-l border-t border-r rounded-t -mb-px bg-gray-200">
             Нейронные сети
           </router-link>
@@ -31,7 +33,7 @@
 </template>
 
 <script>
-import {mapMutations} from "vuex";
+import { mapMutations } from 'vuex';
 
 export default {
   name: 'App',
@@ -39,9 +41,9 @@ export default {
     ...mapMutations('dataset', ['SET_TAG_FOR_FILTER']),
     showAllDatasets() {
       this.SET_TAG_FOR_FILTER(null);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>

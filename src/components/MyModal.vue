@@ -8,13 +8,17 @@
           <p class="text-white font-bold text-left pl-8 text-lg">Параметры датасета</p>
         </div>
         <div class="mb-4">
-          <label class="block text-gray-300 text-sm font-bold mb-2 flex justify-start" for="datasetName">
+          <label class="block text-gray-300 text-sm font-bold mb-2 flex justify-start"
+                 for="datasetName">
             Название датасета:
           </label>
           <input
               v-model.lazy="newDataset.title"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 focus:bg-gray-900"
-              id="datasetName" type="text" placeholder="Введите название датасета..." maxlength="50">
+              class="shadow appearance-none border rounded w-full py-2 px-3
+               text-gray-200 leading-tight focus:outline-none focus:shadow-outline
+                bg-gray-700 focus:bg-gray-900"
+              id="datasetName" type="text" placeholder="Введите название датасета..."
+              maxlength="50">
         </div>
         <div class="mb-6">
           <label class="block text-gray-300 text-sm font-bold mb-2 flex justify-start" for="tags">
@@ -22,7 +26,9 @@
           </label>
           <input
               v-model.lazy="tagsStr"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 focus:bg-gray-900"
+              class="shadow appearance-none border rounded w-full py-2 px-3
+              text-gray-200 mb-3 leading-tight focus:outline-none focus:shadow-outline
+               bg-gray-700 focus:bg-gray-900"
               id="tags" type="text" placeholder="Введите теги через запятую..." maxlength="100">
         </div>
         <div class="mb-6">
@@ -31,11 +37,15 @@
           </label>
           <input
               v-model.lazy="newDataset.size"
-              class="shadow appearance-none border rounded w-1/3 py-2 px-3 text-gray-200 mb-3 leading-tight focus:outline-none focus:shadow-outline flex justify-start bg-gray-700 focus:bg-gray-900"
+              class="shadow appearance-none border rounded w-1/3 py-2 px-3
+              text-gray-200 mb-3 leading-tight focus:outline-none focus:shadow-outline
+               flex justify-start bg-gray-700 focus:bg-gray-900"
               id="size" type="number" placeholder="0">
         </div>
         <button
-            class="w-full bg-gray-900 hover:text-white hover:bg-green-800 text-gray-400 font-bold py-2 px-4 border border-gray-300 rounded hover:border-gray-700 mb-8"
+            class="w-full bg-gray-900 hover:text-white hover:bg-green-800
+            text-gray-400 font-bold py-2 px-4 border border-gray-300 rounded
+            hover:border-gray-700 mb-8"
             type="button"
             @click.prevent="saveDataset"
         >
@@ -47,27 +57,27 @@
 </template>
 
 <script>
-import {mapActions, mapGetters} from "vuex";
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
-  name: "modal",
+  name: 'my-modal',
   emits: ['closeModal'],
   props: ['isAddMode', 'isEditMode', 'editDatasetId'],
   watch: {
     tagsStr(value) {
-      this.newDataset.tags = value.split(',')
-    }
+      this.newDataset.tags = value.split(',').map((tag) => tag.trim());
+    },
   },
   data() {
     return {
       newDataset: {
         title: '',
         tags: [],
-        size: null
+        size: null,
       },
       tagsStr: '',
-      lastDatasetId: null
-    }
+      lastDatasetId: null,
+    };
   },
   computed: {
     ...mapGetters('dataset', ['DATASETS']),
@@ -81,15 +91,15 @@ export default {
         this.ADD_DATASET(this.newDataset);
       }
       if (this.isEditMode) {
-        let payload = {};
+        const payload = {};
         payload.dataset = this.newDataset;
         payload.id = this.editDatasetId;
         this.EDIT_DATASET(payload);
       }
       this.$emit('closeModal');
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

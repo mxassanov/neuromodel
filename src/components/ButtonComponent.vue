@@ -14,11 +14,11 @@ export default {
   props: ['state'],
   computed: {
     bcgColor() {
-      return this.state ? 'bg-gray-500' : 'bg-gray-600'
+      return this.state ? 'bg-gray-500' : 'bg-gray-600';
     },
     hoverText() {
-      return this.state ? '' : 'hover:text-white'
-    }
-  }
-}
+      return this.state ? '' : 'hover:text-white';
+    },
+  },
+};
 </script>

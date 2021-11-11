@@ -168,6 +168,23 @@
         "Terra AI"
       ],
       "size": 1
+    },
+    {
+      "title": "",
+      "tags": [
+        "tag2",
+        "tag2",
+        "tag2"
+      ],
+      "size": null,
+      "id": 19
+    },
+    {
+      "title": "",
+      "tags": [],
+      "size": "3",
+      "id": 21
     }
-  ]
+  ],
+  "networks": []
 }

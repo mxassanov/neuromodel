@@ -1,6 +1,7 @@
 <template>
   <div id="root">
-    <modal
+    <pre-loader v-if="IS_LOADING" />
+    <my-modal
         v-if="isAddMode || isEditMode"
         @closeModal="closeModal"
         :editDatasetId="editDatasetId"
@@ -42,7 +43,7 @@
       <div class="flex justify-start flex-wrap m-2">
         <card-component
             v-for="(dataset, i) in datasetsValue"
-            :key="i"
+            :key="String(i)"
             :dataset="dataset"
             @editItem="editItem(dataset.id)"
             @removeItem="REMOVE_DATASET(dataset.id)"
@@ -53,7 +54,7 @@
 </template>
 
 <script>
-import {mapActions, mapGetters, mapMutations} from "vuex";
+import { mapActions, mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'datasets-list',
@@ -65,13 +66,13 @@ export default {
       isAddMode: false,
       isEditMode: false,
       editDatasetId: null,
-    }
+    };
   },
   computed: {
-    ...mapGetters('dataset', ['DATASETS', 'TAG_FOR_FILTER']),
+    ...mapGetters('dataset', ['DATASETS', 'TAG_FOR_FILTER', 'IS_LOADING']),
     uniqueTags() {
       let tagArr = [];
-      this.DATASETS.forEach(dataset => {
+      this.DATASETS.forEach((dataset) => {
         tagArr = tagArr.concat(dataset.tags);
       });
       return [...new Set(tagArr)];
@@ -80,10 +81,9 @@ export default {
       return this.TAG_FOR_FILTER ? this.filterDatasetsByTags : this.DATASETS;
     },
     filterDatasetsByTags() {
-      return this.DATASETS.filter(dataset => {
-        return dataset.tags.find(tag => tag.toLowerCase().trim() === this.TAG_FOR_FILTER)
-      })
-    }
+      return this.DATASETS.filter((dataset) => dataset.tags.find((tag) => tag
+        .toLowerCase().trim() === this.TAG_FOR_FILTER));
+    },
   },
   methods: {
     ...mapActions('dataset', ['GET_DATASETS', 'REMOVE_DATASET']),
@@ -97,5 +97,5 @@ export default {
       this.editDatasetId = id;
     },
   },
-}
+};
 </script>
